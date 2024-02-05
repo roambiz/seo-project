@@ -13,6 +13,7 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 + 继承默认帖子类型的分类术语规则;
 ### Flush_CPT
 + 刷新重写规则;
++ 任何因为修改slug导致的页面404均可以使用该功能解决;
 ### Plugin Template
 + 方便添加后续的功能模块;
 
@@ -21,8 +22,10 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 * 用于快速启动项目的页面类型。方便添加产品、或生产相关的内容，适合用于制作生产相关的营销落地页。
 * 独立的编辑权限分配。你可以分配相同的工作组给不同的人，例如相同的类目，根据帖子类型限制一个管理文章，一个管理产品上传。
 * 比较适用于相对于简单的、没有很多动态数据需求的B端，主要用于产品展示和广告落地页。你也可以用于存储古腾堡模式的的作品集。
+* 如果你觉得你的C端独立站也用得上，那么很高兴它能够帮助你，一般情况下它并不适合于需要调用很多动态字段的页面。
 
 
 ## 其他备注
 >直接上传压缩包安装，后缀名必须是ZIP格式。
+
 >键名为`seo-project`
