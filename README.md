@@ -8,13 +8,13 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 ## 默认模组
 下面是简单的功能介绍：
 ### Module_CPT
->+添加一个帖子类型:可以修改：1.icon；2.label；3.slug;
->+添加帖子类型角色编辑权限;
->+继承默认帖子类型的分类术语规则;
++ 添加一个帖子类型:可以修改：1.icon；2.label；3.slug;
++ 添加帖子类型角色编辑权限;
++ 继承默认帖子类型的分类术语规则;
 ### Flush_CPT
->+刷新重写规则;
++ 刷新重写规则;
 ### Plugin Template
->+方便添加后续的功能模块;
++ 方便添加后续的功能模块;
 
 ## 使用场景
 一个项目集文件夹（Portfolio）：
@@ -24,5 +24,5 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 
 
 ## 其他备注
-- 直接上传压缩包安装，后缀名必须是ZIP格式。
-- 键名为`seo-project`
+> 直接上传压缩包安装，后缀名必须是ZIP格式。
+> 键名为`seo-project`
