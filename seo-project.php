@@ -3,7 +3,7 @@
  * Plugin Name:         SEO Project
  * Plugin URI:          https://github.com/roambiz/seo-project
  * Description:         Landing Page Post Type[Produce].
- * Version:             1.1.2
+ * Version:             1.0.0
  * File name:           seo-project.php
  * Author:              Singa
  * Author URI:          https://roambiz.com/
