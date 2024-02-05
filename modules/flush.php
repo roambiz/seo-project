@@ -2,7 +2,7 @@
 /*
  * Class: Flush_CPT
  * Description: Handles flushing rewrite rules after custom post type registration.
- * Path: module/flush.php
+ * Path: modules/flush.php
  */
 
 class Flush_CPT {

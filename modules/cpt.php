@@ -2,7 +2,7 @@
 /*
  * Module: cpt.php
  * Description: Custom Post Type Module
- * Path: module/cpt.php
+ * Path: modules/cpt.php
  */
 
 class Module_CPT {
