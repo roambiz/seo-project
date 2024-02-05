@@ -24,5 +24,5 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 
 
 ## 其他备注
-> 直接上传压缩包安装，后缀名必须是ZIP格式。
-> 键名为`seo-project`
+>直接上传压缩包安装，后缀名必须是ZIP格式。
+>键名为`seo-project`
