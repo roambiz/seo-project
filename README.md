@@ -2,6 +2,8 @@
 Create a modular plugin for the SEO project, allowing the addition of modules as needed.
 
 说明：该插件是为了方便B端独立站上产品、跑广告而制作，在实际使用中考虑了后续的扩展性，因为有给外包（雇员）分配权限的需求因此进行了如下设计，分类术语应该是由管理员进行创建，再根据帖子类型进行权限的分配，从而再统一的分类实现两组不同的权限。
+## 下载快捷链接
+> [Download 1.0.0](https://github.com/roambiz/seo-project/releases/tag/1.0.0)
 
 === SEO Project ===
 
