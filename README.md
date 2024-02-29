@@ -59,7 +59,7 @@ add_filter('request', function( array $query_vars ) {
 ```
 RewriteRule ^category/(.+)$ http://www.YourDomain.com/$1 [R=301,L]
 ```
-如果你需要特定页面排除某篇帖子使用如下代码：
+如果你需要特定页面排除某个类别的帖子使用如下代码：
 ```
 add_filter('pre_get_posts', function ($query) {
     // Set the page where the exclusion should take effect
