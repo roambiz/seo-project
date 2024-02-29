@@ -185,6 +185,7 @@ class Module_CPT {
                 $post_types = array( 'post', $cpt_slug ); 
                 $query->set( 'post_type', $post_types );
             }
+            return $query;
         });
     }
 

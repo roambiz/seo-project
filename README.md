@@ -29,7 +29,7 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 * 如果你觉得你的C端独立站也用得上，那么很高兴它能够帮助你，一般情况下它并不适合于需要调用很多动态字段的页面。
 
 ## 栏目页制作
-`Quick Start 1.0.0` 为了极致追求站点轻量化，插件默认是不会将新帖子类型里面的帖子调用到分类存档页面的，因为用不到，当你需要制作栏目页时，使用下面的代码，根据需要使用页面（Page）来制作栏目页，只需要将分类的Slug和页面的Slug设置成一样的即可,类目页就会自动显示你自定义的页面的内容，不过注意，你可能还需要移除分类基础（Category Base）,否则它会出现两个重复的页面，不过你也可以使用301来解决该问题。
+`Quick Start 1.0.0` 为了极致追求站点轻量化，插件默认是不会将新帖子类型里面的帖子调用到分类存档页面的，因为用不到，当你需要制作栏目页时，使用下面的代码，根据需要使用页面（Page）来制作栏目页，只需要将分类的Slug和页面的Slug设置成一样的即可,类目页就会自动显示你自定义的页面的内容，不过注意，你可能还需要移除分类基础（Category Base），否则它会出现两个重复的页面，不过你也可以使用301来解决该问题。
 
 当然，如果你觉得使用Page制作栏目页（帖子存档）比较麻烦，可以下载`Add CPT To Post Query loop 1.1.0` ，该版本的分类页会调用帖子。
 ```
@@ -55,11 +55,50 @@ add_filter('request', function( array $query_vars ) {
     return $query_vars;
 } );
 ```
+直接修改`.htaccess`的重写规则
 ```
-# ref: https://wordpress.org/documentation/article/settings-permalinks-screen/
-
 RewriteRule ^category/(.+)$ http://www.YourDomain.com/$1 [R=301,L]
 ```
+如果你需要特定页面排除某篇帖子使用如下代码：
+```
+add_filter('pre_get_posts', function ($query) {
+    // Set the page where the exclusion should take effect
+    $exclude_page_id = 123; 
+    // Set the category to be excluded
+    $exclude_category_id = 456;
+
+    // Exclude the specified category when the current page matches the specified page
+    if (is_page($exclude_page_id) && $exclude_category_id) {
+        $tax_query = array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'term_id',
+                'terms' => array($exclude_category_id),
+                'operator' => 'NOT IN',
+            ),
+        );
+        $query->set('tax_query', $tax_query);
+    }
+    return $query;
+});
+```
+如果你需要在默认博客页面排除某篇帖子使用如下代码：
+```
+add_filter('pre_get_posts', function ($query) {
+    if ($query->is_home && is_home()) {
+        $post_ids_to_exclude = array(
+            123,
+            456,
+            789,
+        );
+        $query->set('post__not_in', $post_ids_to_exclude);
+    }
+    return $query;
+});
+```
+ref:
+- https://wordpress.org/documentation/article/settings-permalinks-screen/
+- https://developer.wordpress.org/reference/classes/wp_query/
 
 ## 其他备注
 >直接上传压缩包安装，后缀名必须是ZIP格式。
