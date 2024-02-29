@@ -13,6 +13,7 @@ class Module_CPT {
         $cpt = new self();
         $cpt->register_post_type();
         $cpt->add_role_capabilities();
+        $cpt->add_cpt_to_query_loop();
     }
 
     private function register_post_type() {
@@ -171,6 +172,22 @@ class Module_CPT {
             }
         }
     }
+
+    private function add_cpt_to_query_loop() {
+        // Set the post type slug
+        $cpt_slug = 'seo-project';
+        // Set the 'post_type' parameter to include specified post types
+        add_filter( 'pre_get_posts', function( $query ) use ( $cpt_slug ) {
+            if ( $query->is_category() && 
+                 $query->is_main_query() && 
+                 post_type_exists( $cpt_slug ) 
+            ) {
+                $post_types = array( 'post', $cpt_slug ); 
+                $query->set( 'post_type', $post_types );
+            }
+        });
+    }
+
 }
 
 // Inc the class
