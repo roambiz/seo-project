@@ -5,7 +5,7 @@ Create a modular plugin for the SEO project, allowing the addition of modules as
 ## 下载快捷链接
 > [Download 1.0.0](https://github.com/roambiz/seo-project/releases/tag/1.0.0)
 
-> [Download 1.0.1](https://github.com/roambiz/seo-project/releases/tag/1.0.1)
+> [Download 1.1.0](https://github.com/roambiz/seo-project/releases/tag/1.1.0)
 
 === SEO Project ===
 
